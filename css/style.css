@@ -16,18 +16,41 @@ body{
 	padding: 0;
 	margin: 0;	
 	overflow: hidden;
+	background-color: #F68B11
+}
+
+text {
+	fill: #555555;
+	font-size: 24px;
 }
 
 /**
 Custom classes
 **/
+.header{
+	font-size: 3em;
+}
+
+.header2{
+	font-size: 2em;
+}
+
+.orange{
+	fill: #F68B11;
+}
+
+.white{
+	fill: white;
+}
 
 /**
 ID's
 **/
+
 #svg{
 	width: 100vw;
-	height: 100vh;
+	height: auto;
 	padding: 0;
+	padding-bottom: 200vh; 
 	margin: 0;
 }
