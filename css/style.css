@@ -14,5 +14,20 @@ body{
 	width: 100vw;
 	height: 100vh;
 	padding: 0;
+	margin: 0;	
+	overflow: hidden;
+}
+
+/**
+Custom classes
+**/
+
+/**
+ID's
+**/
+#svg{
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
 	margin: 0;
 }
