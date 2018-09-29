@@ -119,11 +119,12 @@ function getLogo() {
  */
 function getLeftText() {
     //High negative opacity makes the first fade happen with a delay
-    let svg = "<g opacity=-20 id='title'><text class='header orange' x=32 y=350>A.C. Gelein</text></g>";
-    svg += "<g id='firstPar' opacity=0><text x=32 y=400>Packaging Knowhow is a passionate one-man bussiness specialized</text>"
-    svg += "<text x=32 y=430>in delivering turn-key environmentally friendly packaging solutions.</text></g>"
-    svg += "<g id='secondPar' opacity=0><text x=32 y=490>If you have any questions, please don't hesitate to send an email</text>"
-    svg += "<text x=32 y=520>or call me on the phone number listed to the right.</text></g>";
+    let svg = "<g opacity=-20 id='title'><text class='header orange' x=32 y=300>A.C. Gelein</text></g>";
+    svg += "<g id='firstPar' opacity=0><text x=32 y=350>Packaging Knowhow is a passionate one-man bussiness specialized</text>"
+    svg += "<text x=32 y=380>in delivering turn-key environmentally friendly packaging and</text>"
+    svg += "<text x=32 y=410>packaging line solutions.</text></g>"
+    svg += "<g id='secondPar' opacity=0><text x=32 y=470>If you have any questions, please don't hesitate to send an email</text>"
+    svg += "<text x=32 y=500>or call me on the phone number listed to the right.</text></g>";
     //REturn the assembled string
     return svg;
 }
@@ -154,7 +155,7 @@ function getHorse() {
  * Returns the letterd logo SVG embed code
  */
 function getLettering() {
-    return "<g id='lettering'><image transform='scale(1.15)' xlink:href='logo/logo_letters.svg'></g>"
+    return "<g id='lettering'><image transform='scale(1.10)' xlink:href='logo/logo_letters.svg'></g>"
 }
 
 /**
