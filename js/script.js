@@ -2,15 +2,17 @@
 /**The spead of easing, or easefactr */
 const easeFactor = 0.05;
 /**The coordinates of the orange half */
-var orangeHalf = { x: 1500, y: 0 };
+var orangeHalf = { x: 1500, y: 0, vx: 0, vy:0 };
 /**The coordinates for the horse head */
-var horse = { x: -1000, y: 10 };
+var horse = { x: -1000, y: 10, vx: 0, vy: 0 };
 /**The coordinates for the lettering */
-var lettering = { x: -1000, y: 50 };
+var lettering = { x: -1000, y: 50, vx:0, vy:0 };
 /**The coordinates for the contact details group */
-var contact = {x: 8000, y: 500};
+var contact = {x: 2000, y: 500, vx:0, vy:0};
 /**How many parts are faded in */
 var fadeStage = 0;
+/**How many parts have swelled */
+var swellStage = 0;
 
 /**
  * This file contains the main scripts for this webpage.
@@ -20,8 +22,26 @@ $(document).ready(function () {
     $('#svg').html(getBG() + getOrangeHalf() + getLogo() + getLeftText() + getRightText());
 
     //Make the draw function run about 30fps
-    window.requestAnimationFrame(draw)
+    window.requestAnimationFrame(draw);
+
+    //Add all listeners
+    addListeners();
 });
+
+/**
+ * Adds all mouse over and other event listeners
+ */
+function addListeners(){
+    $('#secondPar').mouseover(function(){
+        contact.vx = 1;
+    });
+    $('#lettering').mouseover(function(){
+        lettering.vx = 1;
+    });
+    $('#title').mouseover(function(){
+        orangeHalf.vx = 1;
+    });
+}
 
 /**
  * Called every frame
@@ -30,8 +50,10 @@ function draw() {
     orangeHalf.x += (640 - orangeHalf.x) * easeFactor;
     horse.x += (620 - horse.x) * easeFactor;
     lettering.x += (32 - lettering.x) * easeFactor;
-    contact.x += (1000 - contact.x) * easeFactor;
+    //Once all the text is faded in, show the contact details
+    if(fadeStage >= 2) contact.x += (870 - contact.x) * easeFactor;
 
+    //Fade in the left stuff
     fadeInLeft();
 
     //Update all the components position
@@ -57,6 +79,9 @@ function fadeInLeft() {
     }
 }
 
+/**
+ * Returns the BG rect (white)
+ */
 function getBG() {
     return "<rect x=0 y=0 width=2000 height=4000 fill=white/>"
 }
@@ -108,11 +133,12 @@ function getLeftText() {
  */
 function getRightText() {
     //High negative opacity makes the first fade happen with a delay
-    let svg = "<g id='contact'><text class='header2 white' x=0 y=0>Contact Details:</text></g>";
-    //svg += "<g id='firstPar' opacity=0><text x=32 y=400>Packaging Knowhow is a passionate one-man bussiness specialized</text>"
-    //svg += "<text x=32 y=430>in delivering turn-key environmentally friendly packaging solutions.</text></g>"
-    //svg += "<g id='secondPar' opacity=0><text x=32 y=490>If you have any questions, please don't hesitate to send an email</text>"
-    //svg += "<text x=32 y=520>or call me on the phone number listed to the right.</text></g>";
+    let svg = "<g id='contact'><text class='header2 white' x=0 y=0>Contact Details:</text>";
+    svg += "<image x=0 y=100 transform='scale(0.2)' xlink:href='img/mail.svg'/>";
+    svg += "<image x=0 y=300 transform='scale(0.2)' xlink:href='img/phone.svg'/>";
+    svg += "<text x=40 y=42 class='white'>a.c.gelein@packagingknowhow.nl</text>";
+    svg += "<text x=40 y=84 class='white'>+316 3005 8382</text>";
+    svg += "</g>";
     //REturn the assembled string
     return svg;
 }
@@ -193,5 +219,9 @@ function updateLettering() {
  */
 function updateGroup(id, pos) {
     //Now set the transform
+    pos.x += pos.vx;
+    pos.y += pos.vy;
+    pos.vx *= 0.95;
+    pos.vy *= 0.95;
     $(id).attr('transform', 'translate(' + pos.x + "," + pos.y + ")");
 }
