@@ -135,8 +135,8 @@ function getLeftText() {
 function getRightText() {
     //High negative opacity makes the first fade happen with a delay
     let svg = "<g id='contact'><text class='header2 white' x=0 y=0>Contact Details:</text>";
-    svg += "<image x=0 y=100 transform='scale(0.2)' xlink:href='img/mail.svg'/>";
-    svg += "<image x=0 y=300 transform='scale(0.2)' xlink:href='img/phone.svg'/>";
+    svg += "<image x=0 y=100 width='150' height='150' transform='scale(0.2)' xlink:href='img/mail.svg'/>";
+    svg += "<image x=0 y=300 width='150' height='150' transform='scale(0.2)' xlink:href='img/phone.svg'/>";
     svg += "<text x=40 y=42 class='white'>a.c.gelein@packagingknowhow.nl</text>";
     svg += "<text x=40 y=84 class='white'>+316 3005 8382</text>";
     svg += "</g>";
@@ -148,14 +148,14 @@ function getRightText() {
  * Returns the SVG code to embed the horse head
  */
 function getHorse() {
-    return "<g id='horse'><image transform='scale(1.5)' xlink:href='logo/logo_horse.svg'></g>"
+    return "<g id='horse'><image width='350px' height='300px' transform='scale(1.5)' xlink:href='logo/logo_horse.svg'></g>"
 }
 
 /**
  * Returns the letterd logo SVG embed code
  */
 function getLettering() {
-    return "<g id='lettering'><image transform='scale(1.10)' xlink:href='logo/logo_letters.svg'></g>"
+    return "<g id='lettering'><image width='600' height='120' transform='scale(1.10)' xlink:href='logo/logo_letters.svg'></g>"
 }
 
 /**
