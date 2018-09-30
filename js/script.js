@@ -32,6 +32,7 @@ $(document).ready(function () {
  * Adds all mouse over and other event listeners
  */
 function addListeners(){
+    //Mouse over listeners
     $('#secondPar').mouseover(function(){
         contact.vx = 1;
     });
@@ -40,6 +41,13 @@ function addListeners(){
     });
     $('#title').mouseover(function(){
         orangeHalf.vx = 1;
+    });
+    //Click listeners for phone and mail
+    $('#email').unbind('click').click(function(){
+        $('#mailLink')[0].click();
+    });
+    $('#phone').unbind('click').click(function(){
+        $('#phoneLink')[0].click();
     });
 }
 
@@ -120,11 +128,11 @@ function getLogo() {
 function getLeftText() {
     //High negative opacity makes the first fade happen with a delay
     let svg = "<g opacity=-20 id='title'><text class='header orange' x=32 y=300>A.C. Gelein</text></g>";
-    svg += "<g id='firstPar' opacity=0><text x=32 y=350>Packaging Knowhow is a passionate one-man bussiness specialized</text>"
-    svg += "<text x=32 y=380>in delivering turn-key environmentally friendly packaging and</text>"
-    svg += "<text x=32 y=410>packaging line solutions.</text></g>"
-    svg += "<g id='secondPar' opacity=0><text x=32 y=470>If you have any questions, please don't hesitate to send an email</text>"
-    svg += "<text x=32 y=500>or call me on the phone number listed to the right.</text></g>";
+    svg += "<g id='firstPar' opacity=0><text x=32 y=350>Packaging Knowhow is a passionate one-man bussiness specialized</text>";
+    svg += "<text x=32 y=380>in developing turn-key environmentally friendly packaging and</text>";
+    svg += "<text x=32 y=410>packaging line solutions.</text></g>";
+    svg += "<g id='secondPar' opacity=0><text x=32 y=470>If you have any questions, please don't hesitate to send an email</text>";
+    svg += "<text x=32 y=500>or call me for further enquiries.</text></g>";
     //REturn the assembled string
     return svg;
 }
@@ -137,8 +145,8 @@ function getRightText() {
     let svg = "<g id='contact'><text class='header2 white' x=0 y=0>Contact Details:</text>";
     svg += "<image x=0 y=100 width='150' height='150' transform='scale(0.2)' xlink:href='img/mail.svg'/>";
     svg += "<image x=0 y=300 width='150' height='150' transform='scale(0.2)' xlink:href='img/phone.svg'/>";
-    svg += "<text x=40 y=42 class='white'>a.c.gelein@packagingknowhow.nl</text>";
-    svg += "<text x=40 y=84 class='white'>+316 3005 8382</text>";
+    svg += "<text id='email' x=40 y=42 class='white'>a.c.gelein@packagingknowhow.nl</text>";
+    svg += "<text id='phone' x=40 y=84 class='white'>+316 3005 8382</text>";
     svg += "</g>";
     //REturn the assembled string
     return svg;

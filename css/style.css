@@ -55,3 +55,8 @@ ID's
 	padding-bottom: 200vh; 
 	margin: 0;
 }
+
+#phone:hover, #email:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
