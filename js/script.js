@@ -128,11 +128,12 @@ function getLogo() {
 function getLeftText() {
     //High negative opacity makes the first fade happen with a delay
     let svg = "<g opacity=-20 id='title'><text class='header orange' x=32 y=300>A.C. Gelein</text></g>";
-    svg += "<g id='firstPar' opacity=0><text x=32 y=350>Packaging Knowhow is a passionate one-man bussiness specialized</text>";
+    svg += "<g id='firstPar' opacity=0><text x=32 y=350>Packaging Knowhow is a passionate one-man business specialized</text>";
     svg += "<text x=32 y=380>in developing turn-key environmentally friendly packaging and</text>";
-    svg += "<text x=32 y=410>packaging line solutions.</text></g>";
-    svg += "<g id='secondPar' opacity=0><text x=32 y=470>If you have any questions, please don't hesitate to send an email</text>";
-    svg += "<text x=32 y=500>or call me for further enquiries.</text></g>";
+    svg += "<text x=32 y=410>packaging line solutions. We are based in the Netherlands with</text>"
+    svg += "<text x=32 y=440>clients around Europe.</text></g>";
+    svg += "<g id='secondPar' opacity=0><text x=32 y=500>If you have any questions, please don't hesitate to send an email</text>";
+    svg += "<text x=32 y=530>or call me for further enquiries.</text></g>";
     //REturn the assembled string
     return svg;
 }
