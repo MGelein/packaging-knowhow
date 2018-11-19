@@ -1,0 +1,59 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg" viewBox="0 0 1280 720">
+    <style>
+    /**
+Font
+**/
+@font-face {
+    font-family: 'Drax'; /*a name to be used later*/
+    src: url('drax.ttf'); /*URL to font*/
+}
+
+/**
+HTML Overrides
+**/
+
+text { 
+    font-family: Drax;
+	fill: #555555;
+	font-size: 24px;
+}
+
+/**
+Custom classes
+**/
+
+.header{
+	font-size: 3em;
+}
+
+.header2{
+	font-size: 2em;
+}
+
+.orange{
+	fill: #F68B11;
+}
+
+.white{
+	fill: white;
+}
+
+
+    </style>
+    <rect x="0" y="0" width="2000" height="4000" fill="white"></rect>
+    <g transform="translate(640.0000000000011,0)" id="orangeHalf">
+        <path fill="#F68B11" d="M0 720 Q320 360 320 0 L320 -1000 L2000 -1000 L4000 2000 L-3000 4000 Z">
+        </path>
+    </g>
+    <g id="horse" transform="translate(619.9999999999989,10)"><image width="350px" height="300px"   transform="scale(1.5)" xlink:href="logo_horse.svg"></image></g><g id="lettering" transform="translate(32.00000000000007,50)"><image width="600" height="120" transform="scale(1.10)" xlink:href="logo_letters.svg"></image></g><g opacity="1" id="title"><text class="header orange" x="32" y="300">A.C. Gelein</text></g><g id="firstPar" opacity="1"><text x="32" y="350">Packaging Knowhow is a passionate one-man business specialized</text><text x="32" y="380">in developing turn-key environmentally friendly packaging and</text><text x="32" y="410">packaging line solutions. We are based in the Netherlands with</text><text x="32" y="440">clients around Europe.</text></g><g id="secondPar" opacity="1"><text x="32" y="500">If you have any questions, please don't hesitate to send an email</text><text x="32" y="530">or call me for further enquiries.</text></g><g id="contact" transform="translate(870.0000000000011,500)"><text class="header2 white" x="0" y="0">Contact Details:</text><image x="0" y="100" width="150" height="150" transform="scale(0.2)" xlink:href="mail.svg"></image><image x="0" y="300" width="150" height="150" transform="scale(0.2)" xlink:href="phone.svg"></image><text id="email" x="40" y="42" class="white">a.c.gelein@packagingknowhow.nl</text><text id="phone" x="40" y="84" class="white">+316 3005 8382</text></g>
+</svg>
